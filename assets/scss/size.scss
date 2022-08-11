@@ -6,9 +6,37 @@ $size_60 : calc( (100vw - 480px)/(1320 - 480) * (60 - 60) + 60px);
 $size_40 : calc( (100vw - 480px)/(1320 - 480) * (40 - 40) + 40px);
 $size_24 : calc( (100vw - 480px)/(1320 - 480) * (24 - 24) + 24px);
 
+
+section{
+  margin-top: 130px;
+}
+input,
+textarea{
+  padding: 14px 23px;
+  box-sizing: border-box;
+  font-family: $manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $size_16;
+  letter-spacing: 0.02em;
+  background: #F7F7F7;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  resize: none;
+}
+.text-right{
+  text-align: right;
+}
 .green{
   color: rgba(145, 199, 9, 1) !important;
 }
+.blue{
+  color: #09B7D9 !important;
+  font-size: inherit !important;
+  font-weight:  inherit !important;
+}
+
 .banner_form_btn{
   background:  linear-gradient(94.48deg, #09B7D9 0%, #96C61C 100%);
   //background-blend-mode: overlay, normal;
@@ -44,6 +72,8 @@ $size_24 : calc( (100vw - 480px)/(1320 - 480) * (24 - 24) + 24px);
   box-sizing: border-box;
   transition: 0.3s all;
   background: transparent;
+  display: block;
+  width: max-content;
   &:hover{
     text-decoration: none;
     color: #9AD20D;
@@ -65,6 +95,8 @@ $size_24 : calc( (100vw - 480px)/(1320 - 480) * (24 - 24) + 24px);
   box-sizing: border-box;
   text-decoration: none;
   transition: 0.3s all;
+  border: none;
+  outline: none;
   &:hover{
     background:  linear-gradient(94.79deg, #09B7D9 -32.42%, #B6E441 100%);
     box-shadow: 0px 16px 48px -16px #62EA80, inset 0px -2px 0px rgba(34, 211, 200, 0.4), inset 0px 0px 16px rgba(255, 255, 255, 0.75);
