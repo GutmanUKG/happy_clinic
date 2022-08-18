@@ -1,20 +1,22 @@
-$manrope: 'Manrope',sans-serif;
-$inter : 'Inter',sans-serif;
-$size_16 : calc( (100vw - 480px)/(1320 - 480) * (16 - 16) + 16px);
-$size_18 : calc( (100vw - 480px)/(1320 - 480) * (18 - 18) + 18px);
-$size_60 : calc( (100vw - 480px)/(1320 - 480) * (60 - 60) + 60px);
-$size_40 : calc( (100vw - 480px)/(1320 - 480) * (40 - 40) + 40px);
-$size_24 : calc( (100vw - 480px)/(1320 - 480) * (24 - 24) + 24px);
+$manrope: 'Manrope', sans-serif;
+$inter: 'Inter', sans-serif;
+$size_16: calc((100vw - 480px) / (1320 - 480) * (16 - 16) + 16px);
+$size_18: calc((100vw - 480px) / (1320 - 480) * (18 - 18) + 18px);
+$size_60: calc((100vw - 480px) / (1320 - 480) * (60 - 60) + 60px);
+$size_40: calc((100vw - 480px) / (1320 - 480) * (40 - 40) + 40px);
+$size_24: calc((100vw - 480px) / (1320 - 480) * (24 - 24) + 24px);
 
 
-section{
+section {
   margin-top: 130px;
 }
-section.banner{
+
+section.banner {
   margin-top: 0;
 }
+
 input,
-textarea{
+textarea {
   padding: 14px 23px;
   box-sizing: border-box;
   font-family: $manrope;
@@ -28,20 +30,23 @@ textarea{
   outline: none;
   resize: none;
 }
-.text-right{
+
+.text-right {
   text-align: right;
 }
-.green{
+
+.green {
   color: rgba(145, 199, 9, 1) !important;
 }
-.blue{
+
+.blue {
   color: #09B7D9 !important;
   font-size: inherit !important;
-  font-weight:  inherit !important;
+  font-weight: inherit !important;
 }
 
-.banner_form_btn{
-  background:  linear-gradient(94.48deg, #09B7D9 0%, #96C61C 100%);
+.banner_form_btn {
+  background: linear-gradient(94.48deg, #09B7D9 0%, #96C61C 100%);
   //background-blend-mode: overlay, normal;
   box-shadow: 0px 16px 48px -16px #4BBF82, inset 0px -2px 0px rgba(42, 130, 92, 0.4), inset 0px 0px 16px rgba(255, 255, 255, 0.5);
   border-radius: 60px;
@@ -56,7 +61,8 @@ textarea{
   padding: 20px 48px;
   box-sizing: border-box;
   transition: 0.3s all;
-  &:hover{
+
+  &:hover {
     background: linear-gradient(94.79deg, #09B7D9 -32.42%, #B6E441 100%);
     //background-blend-mode: overlay, normal;
     box-shadow: 0px 16px 48px -16px #62EA80, inset 0px -2px 0px rgba(34, 211, 200, 0.4), inset 0px 0px 16px rgba(255, 255, 255, 0.75);
@@ -64,35 +70,50 @@ textarea{
     color: #FFFFFF;
   }
 }
-.default_link{
+
+.default_link {
   font-family: $inter;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
   color: #329C66;
-  padding: 20px 48px;
+  //padding: 20px 48px;
   box-sizing: border-box;
   transition: 0.3s all;
   background: transparent;
-  width: max-content;
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  width: max-content;
   gap: 2px;
-  &:after{
+  position: relative;
+
+  &:after {
     content: '';
     display: block;
     width: 100%;
     height: 1px;
     background: #329C66;
+    transition: 0.3s all;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
   }
-  &:hover{
+
+  &:hover {
     text-decoration: none;
     color: #9AD20D;
+
+    &:after {
+      //transform: scaleX(0);
+      //left: -100%;
+      width: 0;
+    }
   }
 }
-.btn_form_default{
+
+.btn_form_default {
   font-family: $inter;
   font-style: normal;
   font-weight: 700;
@@ -110,15 +131,16 @@ textarea{
   transition: 0.3s all;
   border: none;
   outline: none;
-  &:hover{
-    background:  linear-gradient(94.79deg, #09B7D9 -32.42%, #B6E441 100%);
+
+  &:hover {
+    background: linear-gradient(94.79deg, #09B7D9 -32.42%, #B6E441 100%);
     box-shadow: 0px 16px 48px -16px #62EA80, inset 0px -2px 0px rgba(34, 211, 200, 0.4), inset 0px 0px 16px rgba(255, 255, 255, 0.75);
     border-radius: 4px;
     color: #FFFFFF;
   }
 }
 
-.btn_section{
+.btn_section {
   border-radius: 60px;
   height: 60px;
   display: flex;
@@ -135,13 +157,14 @@ textarea{
   width: max-content;
   color: rgba(150, 198, 28, 1);
   transition: 0.3s all;
-  &:hover{
+
+  &:hover {
     border: transparent;
     color: rgba(150, 198, 28, 1);
   }
 }
 
-.detail_link{
+.detail_link {
   font-family: $inter;
   font-style: normal;
   font-weight: 700;
@@ -152,14 +175,15 @@ textarea{
   color: #329C66;
   text-decoration: underline !important;
   transition: 0.3s all;
-  &:hover{
+
+  &:hover {
     text-decoration: none;
     color: #9AD20D;
   }
 }
 
 
-.section_title{
+.section_title {
   font-family: $manrope;
   font-style: normal;
   font-weight: 600;
@@ -167,7 +191,7 @@ textarea{
   color: #2E2E38;
 }
 
-.subtitle{
+.subtitle {
   font-family: $manrope;
   font-style: normal;
   font-weight: 400;
