@@ -1256,3 +1256,158 @@ footer {
   }
 }
 
+.inner_select_time{
+  .banner_serve{
+    .banner_img{
+      img{
+        width: 363px;
+        height: 367px;
+        object-fit: cover;
+      }
+      &:before{
+        width: 378px;
+        height: 100%;
+      }
+      &:after{
+        width: 378px;
+        height: 100%;
+      }
+    }
+    h1{
+      font-size: $size_44;
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        background: linear-gradient(77.03deg, #14CBEF -71.22%, #98CD10 150.33%), #D9D9D9;
+        width: 48px;
+        height: 2px;
+        top: calc(100% + 10px);
+        position: absolute;
+      }
+    }
+    .descr{
+      font-family: $inter;
+      font-style: normal;
+      font-weight: 700;
+      font-size: $size_20;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #96C61C;
+    }
+    .experience{
+      font-family: $manrope;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      color: rgba(46, 46, 56, 0.8);
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .text{
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.table_time{
+  .table_time_top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .date{
+      font-family: $manrope;
+      font-style: normal;
+      font-weight: 600;
+      font-size: $size_24;
+      letter-spacing: -0.02em;
+      color: #2E2E38;
+    }
+    .trigger_btns{
+      display: flex;
+      gap: 60px;
+      .serve_list_btn{
+        font-family: $manrope;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        color: #98CD10;
+        cursor: pointer;
+      }
+      .btn_next{
+        font-family: $manrope;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.01em;
+        color: rgba(46, 46, 56, 0.8);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        &:after{
+          content: '';
+          display: block;
+          width: 16px;
+          height: 8px;
+          background: url("../assets/imgs/optimize_imgs/icons/arrow_next.png")(center/contain) no-repeat;
+        }
+
+
+      }
+    }
+  }
+  .table{
+    border: 1px solid rgba(46, 46, 56, 0.1);
+    margin-top: 20px;
+    .days{
+      font-family: $manrope;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      color: #329C66;
+      border: none;
+      td{
+        border: none;
+        text-align: center;
+        border-right: 1px solid rgba(46, 46, 56, 0.1);
+      }
+    }
+    .time{
+      td{
+        padding: 20px 30px;
+        box-sizing: border-box;
+        border-right: 1px solid rgba(46, 46, 56, 0.1);
+        //display: flex;
+        //align-items: center;
+        //justify-content: center;
+        span {
+          font-family: $manrope;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          letter-spacing: 0.02em;
+          color: rgba(46, 46, 56, 0.5);
+          padding: 16px 40px;
+          box-sizing: border-box;
+          background: #F6F8EE;
+          border-radius: 100px;
+          display: flex;
+          justify-content: center;
+        }
+        &.open{
+          cursor: pointer;
+          span{
+            background: linear-gradient(77.03deg, rgba(20, 203, 239, 0.4) -71.22%, rgba(152, 205, 16, 0.4) 150.33%), #F6F8EE;
+          }
+        }
+
+      }
+    }
+
+  }
+}

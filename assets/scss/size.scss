@@ -4,7 +4,9 @@ $size_16: calc((100vw - 480px) / (1320 - 480) * (16 - 16) + 16px);
 $size_18: calc((100vw - 480px) / (1320 - 480) * (18 - 18) + 18px);
 $size_60: calc((100vw - 480px) / (1320 - 480) * (60 - 60) + 60px);
 $size_40: calc((100vw - 480px) / (1320 - 480) * (40 - 40) + 40px);
+$size_44: calc((100vw - 480px) / (1320 - 480) * (44 - 44) + 44px);
 $size_24: calc((100vw - 480px) / (1320 - 480) * (24 - 24) + 24px);
+$size_20: calc((100vw - 480px) / (1320 - 480) * (20 - 20) + 20px);
 
 
 section {
@@ -182,7 +184,40 @@ textarea {
   }
 }
 
-
+.btn_phone{
+  background: linear-gradient(94.48deg, #09B7D9 0%, #96C61C 100%);
+  box-shadow: 0px 16px 48px -16px #4BBF82, inset 0px -2px 0px rgba(42, 130, 92, 0.4), inset 0px 0px 12px rgba(255, 255, 255, 0.5);
+  border-radius: 60px;
+  position: relative;
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  svg{
+    margin-left: auto;
+    margin-right: -20px;
+  }
+  &:after{
+    content: '';
+    display: block;
+    background: rgba(42, 130, 92, 0.4);
+    width: 1px;
+    height: 58px;
+    position: absolute;
+    right: 70px;
+    top: 0;
+  }
+  &:before{
+    content: '';
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+    width: 1px;
+    height: 58px;
+    position: absolute;
+    right: 69px;
+    top: 0;
+  }
+}
 .section_title {
   font-family: $manrope;
   font-style: normal;
