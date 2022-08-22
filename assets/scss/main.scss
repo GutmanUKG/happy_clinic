@@ -1402,12 +1402,220 @@ footer {
         &.open{
           cursor: pointer;
           span{
+            transition: 0.3s all;
+            border: 1px solid transparent;
             background: linear-gradient(77.03deg, rgba(20, 203, 239, 0.4) -71.22%, rgba(152, 205, 16, 0.4) 150.33%), #F6F8EE;
+            &:hover{
+              background: #F6F8EE;
+              border: 1px solid rgba(152, 205, 16, 0.4);
+            }
           }
         }
 
       }
+
     }
 
+  }
+}
+
+.inner{
+  .banner{
+    .descr{
+      font-family: $manrope;
+      font-style: normal;
+      font-weight: 400;
+      font-size: $size_18;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      color: rgba(46, 46, 56, 0.75);
+      margin-bottom: 40px;
+    }
+    .banner_img{
+      img{
+
+      }
+    }
+  }
+}
+
+.form_section{
+
+  .title{
+    font-family: $manrope;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $size_24;
+    letter-spacing: -0.02em;
+    color: #2E2E38;
+  }
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .toggle_wrapper{
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      span{
+        font-family: $manrope;
+        font-style: normal;
+        font-weight: 500;
+        font-size: $size_16;
+        color: #7E7E84;
+      }
+      .btn_toggle{
+        background: linear-gradient(0deg, #E9EBE2, #E9EBE2), #F6F8EE;
+        border-radius: 100px;
+        width: 60px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s all;
+        &.adult{
+          span{
+            right: 0;
+          }
+        }
+        span{
+          background:  linear-gradient(94.48deg, #09B7D9 0%, #96C61C 100%);
+          border-radius: 100px;
+          width: 30px;
+          height: 30px;
+          display: block;
+          position: absolute;
+        }
+      }
+    }
+  }
+  .info_form{
+    margin-top: 20px;
+    padding: 32px;
+    box-sizing: border-box;
+    background: rgba(255, 253, 245, 0.75);
+    box-shadow: 0px 8px 32px -8px rgba(31, 109, 68, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    .date{
+      font-family: $inter;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #58585E;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin-bottom: 66px;
+      &:after{
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(77.03deg, #14CBEF -71.22%, #98CD10 150.33%), #D9D9D9;
+        position: absolute;
+        top: calc(100% + 20px);
+      }
+    }
+    .info_title{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+      font-family: $manrope;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      color: #58585E;
+      .title{
+        font-family: $manrope;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+        color: #2E2E38;
+      }
+    }
+  }
+
+  .info_price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #D9D9D9;
+    padding-top: 20px;
+    span{
+      font-family: $manrope;
+      font-style: normal;
+      font-weight: 700;
+      font-size: $size_18;
+      letter-spacing: 0.02em;
+      color: #58585E;
+    }
+
+  }
+  .info_btn{
+    margin: 40px auto 0 auto;
+  }
+}
+
+.select_form_wrapper{
+  .toggle_form{
+    padding: 50px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 32px -8px rgba(31, 109, 68, 0.1);
+    margin-top: 20px;
+    .form_wrapper{
+      .form_group_wrapper{
+        display: flex;
+        gap: 50px;
+      }
+      .form_group{
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 50px);
+        .form_title{
+          font-family: $manrope;
+          font-style: normal;
+          font-weight: 700;
+          font-size: $size_20;
+          letter-spacing: 0.02em;
+          color: #329C66;
+        }
+        span{
+          font-family: $manrope;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          letter-spacing: 0.02em;
+          color: #2E2E38;
+          margin-top: 30px;
+          display: block;
+          margin-bottom: 20px;
+        }
+        input{
+          margin-bottom: 20px;
+        }
+        .descr{
+          font-family: $manrope;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 19px;
+          letter-spacing: 0.01em;
+          color: rgba(46, 46, 56, 0.8);
+        }
+      }
+      .form_submit{
+        margin-top: 64px;
+      }
+      &.form_adult{
+        display: none;
+      }
+    }
   }
 }
