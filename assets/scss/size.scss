@@ -284,10 +284,35 @@ input{
   padding: 20px 50px;
   box-sizing: border-box;
   transition: 0.3s all;
+  border: transparent;
   &:hover{
     background: linear-gradient(94.79deg, #09B7D9 -32.42%, #B6E441 100%);
     box-shadow: 0px 16px 48px -16px #62EA80, inset 0px -2px 0px rgba(34, 211, 200, 0.4), inset 0px 0px 16px rgba(255, 255, 255, 0.75);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.6);
   }
+}
+
+
+.btn_toggle_boll{
+  cursor: pointer;
+  border: 1px solid;
+  outline: none;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ACACAC;
+  border-radius: 60px;
+  width: 178px;
+  height: 60px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
 }
