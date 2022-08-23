@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const resultMess = popup.querySelector('.result_mess')
         const btnNextStep = popup.querySelector('.next_step')
 
-        const btnToggleBoll = popup.querySelector('.btn_toggle_boll')
+
 
         btnNextStep.addEventListener('click', (e)=>{
             e.preventDefault()
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         width: 736px;
                         height: 334px;
                         display: block;
-                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
+                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
                     `
                 }else{
                     popup.classList.remove('error')
@@ -68,32 +68,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         width: 736px;
                         height: 334px;
                         display: block;
-                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
+                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
                     `
                 }
             }
         })
 
-        btnToggleBoll.addEventListener('click', ()=>{
-            isError = !isError
-            if(isError === true){
-                popup.classList.add('error')
-                popup.style.cssText = `
-                        width: 736px;
-                        height: 334px;
-                        display: block;
-                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
-                    `
-            }else{
-                popup.classList.remove('error')
-                popup.style.cssText = `
-                        width: 736px;
-                        height: 334px;
-                        display: block;
-                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
-                    `
-            }
-        })
+
 
         const toggleFormWrapper = document.querySelector('.toggle_form')
         const btnsFormsTrigger = toggleFormWrapper.querySelectorAll('.form_submit')

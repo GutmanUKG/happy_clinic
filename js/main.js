@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var popupMess = popup.querySelector('.popup_mess');
     var resultMess = popup.querySelector('.result_mess');
     var btnNextStep = popup.querySelector('.next_step');
-    var btnToggleBoll = popup.querySelector('.btn_toggle_boll');
     btnNextStep.addEventListener('click', function (e) {
       e.preventDefault();
       step++;
@@ -52,22 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isError === true) {
           popup.classList.add('error');
-          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;\n                    ";
+          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;\n                    ";
         } else {
           popup.classList.remove('error');
-          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;\n                    ";
+          popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(./assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;\n                    ";
         }
-      }
-    });
-    btnToggleBoll.addEventListener('click', function () {
-      isError = !isError;
-
-      if (isError === true) {
-        popup.classList.add('error');
-        popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;\n                    ";
-      } else {
-        popup.classList.remove('error');
-        popup.style.cssText = "\n                        width: 736px;\n                        height: 334px;\n                        display: block;\n                        background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;\n                    ";
       }
     });
     var toggleFormWrapper = document.querySelector('.toggle_form');
