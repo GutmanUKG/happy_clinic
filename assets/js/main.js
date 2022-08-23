@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const toggleForm = document.querySelector('#toggle_form')
     const formChild = document.querySelector('.form_child')
     const formAdult = document.querySelector('.form_adult')
+
+    let step = 0;
+
+    //Переменная для проверки вывода всплываши с ошибкой
+    let isError = false
+
+
     toggleForm.addEventListener('click', ()=>{
         toggleForm.classList.toggle('adult')
         if(toggleForm.classList.contains('adult')){
@@ -21,9 +28,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
             e.preventDefault()
             element.classList.remove('active')
             document.body.style.overflow = ''
+            element.style.cssText = ``
+            step = 0
+            let popup_mess = element.querySelector('.popup_mess').style.display = 'block'
+            let mess = element.querySelector('.result_mess')
+            mess.style.display = 'none'
+
         })
     }
-    closeElement('.btn_close', '.popup')
+    closeElement('.btn_close', '.popup',)
 
 
     //stepsForm
@@ -31,11 +44,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const popup = document.querySelector('.popup')
         const popupMess = popup.querySelector('.popup_mess')
         const resultMess = popup.querySelector('.result_mess')
-        const btnNextStep = popup.querySelector('.form_submit')
-        let step = 0;
+        const btnNextStep = popup.querySelector('.next_step')
+
         const btnToggleBoll = popup.querySelector('.btn_toggle_boll')
-        //Переменная для проверки вывода всплываши с ошибкой
-        let isError = false
+
         btnNextStep.addEventListener('click', (e)=>{
             e.preventDefault()
             step++
@@ -47,6 +59,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     popup.style.cssText = `
                         width: 736px;
                         height: 334px;
+                        display: block;
                         background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
                     `
                 }else{
@@ -54,6 +67,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     popup.style.cssText = `
                         width: 736px;
                         height: 334px;
+                        display: block;
                         background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
                     `
                 }
@@ -67,6 +81,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 popup.style.cssText = `
                         width: 736px;
                         height: 334px;
+                        display: block;
                         background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_error.png) right/contain no-repeat;
                     `
             }else{
@@ -74,11 +89,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 popup.style.cssText = `
                         width: 736px;
                         height: 334px;
+                        display: block;
                         background: #FFF url(../assets/imgs/optimize_imgs/popup_bg_check.png) right/contain no-repeat;
                     `
             }
         })
+
+        const toggleFormWrapper = document.querySelector('.toggle_form')
+        const btnsFormsTrigger = toggleFormWrapper.querySelectorAll('.form_submit')
+        console.log(btnsFormsTrigger)
+        btnsFormsTrigger.forEach(item=>{
+            item.addEventListener('click', (e)=>{
+                e.preventDefault()
+                popup.style.display = 'block'
+            })
+        })
     }catch(e){
         console.error(e)
     }
+
+
 })

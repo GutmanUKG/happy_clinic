@@ -1631,6 +1631,7 @@ footer {
   border-radius: 20px;
   padding: 50px;
   box-sizing: border-box;
+  display: none;
   &.active{
     display: block;
   }
