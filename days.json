@@ -1,0 +1,140 @@
+[
+  {
+    "date": "1.08",
+    "day_week": "Пн",
+    "time": [
+      {
+        "clock": "8.00",
+        "active": false
+      },
+      {
+        "clock": "9.00",
+        "active": true
+      },
+      {
+        "clock": "10.00",
+        "active": false
+      },
+      {
+        "clock": "19.00",
+        "active": true
+      }
+    ]
+  },
+  {
+    "date": "2.08",
+    "day_week": "Вт",
+    "time": [
+      {
+        "clock": "8.00",
+        "active": false
+      },
+      {
+        "clock": "9.00",
+        "active": true
+      },
+      {
+        "clock": "10.00",
+        "active": true
+      }
+    ]
+  },
+  {
+    "date": "3.08",
+    "day_week": "Ср",
+    "time": [
+      {
+        "clock": "8.00",
+        "active": false
+      },
+      {
+        "clock": "9.00",
+        "active": true
+      },
+      {
+        "clock": "10.00",
+        "active": false
+      },
+      {
+        "clock": "11.00",
+        "active": true
+      },
+      {
+        "clock": "12.00",
+        "active": false
+      }
+    ]
+  },
+  {
+    "date": "4.08",
+    "day_week": "Чт",
+    "time": [
+      {
+        "clock": "8.00",
+        "active": false
+      },
+      {
+        "clock": "9.00",
+        "active": true
+      },
+      {
+        "clock": "10.00",
+        "active": false
+      }
+    ]
+  },
+  {
+    "date": "5.08",
+    "day_week": "Пт",
+    "time": [
+      {
+        "clock": "8.00",
+        "active": false
+      },
+      {
+        "clock": "9.00",
+        "active": true
+      },
+      {
+        "clock": "11.00",
+        "active": true
+      }
+    ]
+  },
+  {
+    "date": "6.08",
+    "day_week": "Сб",
+    "time": [
+      {
+        "clock": "8.00",
+        "active": false
+      },
+      {
+        "clock": "9.00",
+        "active": true
+      },
+      {
+        "clock": "10.00",
+        "active": false
+      }
+    ]
+  },
+  {
+    "date": "7.08",
+    "day_week": "Вс",
+    "time": [
+      {
+        "clock": "-",
+        "active": false
+      },
+      {
+        "clock": "-",
+        "active": false
+      },
+      {
+        "clock": "-",
+        "active": false
+      }
+    ]
+  }
+]
