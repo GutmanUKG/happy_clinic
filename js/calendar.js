@@ -1,59 +1,68 @@
-document.addEventListener('DOMContentLoaded',()=>{
-    const days_list = document.querySelector('.days_list')
-    const colums = days_list.querySelectorAll('.day_date')
-    const days = []
-    let loader = document.querySelector('#loader')
-    let isLoad = true
-    let url = `/days.json`
+"use strict";
 
-    fetch(`${url}`)
-        .then(res=> res.json())
-        .then(data=>{
+document.addEventListener('DOMContentLoaded', function () {
+  var days_list = document.querySelector('.days_list');
+  var colums = days_list.querySelectorAll('.day_date');
+  var days = [];
+  var loader = document.querySelector('#loader');
+  var isLoad = true;
+  var url = "/days.json";
+  fetch("".concat(url)).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    //Функция формирует журнал времени и отлючает лоадер
+    renderTime(data);
+    isLoad = false;
 
-            renderTime(data)
-            isLoad = false
-            if(isLoad == false){
-                loader.style.display= 'none'
-            }
-        })
+    if (isLoad == false) {
+      loader.style.display = 'none';
+    }
+  }); //Текущая дата
 
-    let curDate = new Date().getDate()
-    let curMonth = new Date().getMonth()
-    let date = (function (){
-        if(curMonth +1 < 10){
-            curMonth = `0${curMonth + 1}`
-        }else{
-            curMonth = `${curMonth + 1}`
-        }
-        return `${curDate}.${curMonth}`
-    })()
-    console.log(date)
+  var curDate = new Date().getDate();
+  var curMonth = new Date().getMonth();
 
-    function renderTime(data){
-        for(let i = 0; i < data.length; i++){
-            let dateWrapper = colums[i].querySelector('.date').querySelector('span')
-            if(dateWrapper.textContent == data[i].date){
-                if(dateWrapper.textContent == date){
-                    dateWrapper.parentNode.classList.add('cur_date')
-
-                }
-                let time_wrapper = document.createElement('div')
-                time_wrapper.classList.add('time_wrapper')
-                for(let c = 0; c < data[i].time.length; c++){
-
-                    let time = document.createElement('div')
-                    time.classList.add('time_item')
-                    time.innerHTML = `<span>${data[i].time[c].clock}</span>`
-                    time_wrapper.appendChild(time)
-                    if(data[i].time[c].active == true){
-                        time.innerHTML = `<span class="active">${data[i].time[c].clock}</span>`
-                        time_wrapper.appendChild(time)
-                    }
-                    colums[i].appendChild(time_wrapper)
-                }
-
-            }
-        }
+  var date = function () {
+    if (curMonth + 1 < 10) {
+      curMonth = "0".concat(curMonth + 1);
+    } else {
+      curMonth = "".concat(curMonth + 1);
     }
 
+    return "".concat(curDate, ".").concat(curMonth);
+  }();
+
+  function renderTime(data) {
+    for (var i = 0; i < data.length; i++) {
+      var dateWrapper = colums[i].querySelector('.date').querySelector('span');
+
+      if (dateWrapper.textContent == data[i].date) {
+        //Поиск текущей даты в таблице и добавление к ней класса
+        if (dateWrapper.textContent == date) {
+          dateWrapper.parentNode.parentNode.classList.add('cur_date');
+        } //Обертка для списка времени примема
+
+
+        var time_wrapper = document.createElement('div');
+        time_wrapper.classList.add('time_wrapper');
+
+        for (var c = 0; c < data[i].time.length; c++) {
+          //Формирование елемента времени приема
+          var time = document.createElement('div');
+          time.classList.add('time_item');
+          time.innerHTML = "<span>".concat(data[i].time[c].clock, "</span>");
+          time_wrapper.appendChild(time); //Выделение свободных часов
+
+          if (data[i].time[c].active == true) {
+            time.innerHTML = "<span class=\"active\">".concat(data[i].time[c].clock, "</span>");
+            time_wrapper.appendChild(time);
+          } //Сортировка по колонкам
+
+
+          colums[i].appendChild(time_wrapper);
+        }
+      }
+    }
+  }
 });
+//# sourceMappingURL=calendar.js.map
