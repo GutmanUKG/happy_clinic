@@ -1315,6 +1315,7 @@ footer {
 
 .table_time{
   .table_time_top{
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1769,7 +1770,8 @@ footer {
     }
     //height: 100%;
     .time_item{
-      padding: 30px 37px;
+      //padding: 30px 37px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1779,6 +1781,11 @@ footer {
         box-sizing: border-box;
         background: #F6F8EE;
         border-radius: 100px;
+        font-family: $manrope;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        color: rgba(46, 46, 56, 0.5);
         &.active{
           background: linear-gradient(77.03deg, rgba(20, 203, 239, 0.4) -71.22%, rgba(152, 205, 16, 0.4) 150.33%), #F6F8EE;
           border-radius: 100px;
@@ -1801,16 +1808,23 @@ footer {
       font-size: 20px;
       padding-top: 32px;
       box-sizing: border-box;
+      margin-bottom: 20px;
       span{
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         color: #2E2E38;
+
       }
     }
   }
 }
-
+.cur_date{
+  background: linear-gradient(77.03deg, rgba(20, 203, 239, 0.4) -71.22%, rgba(152, 205, 16, 0.4) 150.33%), #F6F8EE;
+  border-radius: 12px;
+  padding: 0px 20px;
+  border: 1px solid rgba(152, 205, 16, 1);
+}
 #calendar{
   position: relative;
 
