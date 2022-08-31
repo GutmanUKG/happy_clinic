@@ -1,23 +1,236 @@
-//@media (max-width: 1023px) {
-//  .days_list{
-//    overflow-y: hidden;
-//    max-height: 1031px;
-//  }
-//  .day_date{
-//    .time_wrapper{
-//      //display: none;
-//    }
-//    &.cur_date{
-//      grid-column-start: 1;
-//      grid-column-end: 8;
-//      grid-row-start: 1;
-//      grid-row-end: 7;
-//
-//      .time_wrapper{
-//        display: flex;
-//        flex-wrap: wrap;
-//        gap: 20px;
-//      }
-//    }
-//  }
-//}
+@media (max-width: 1399px) {
+  .header_phones_list{
+    gap: 4px;
+  }
+  .header_logo{
+    width: 19%;
+    a{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 1199px){
+  section{
+    margin-top: 38px;
+  }
+  .header_phones_list{
+    //font-size: 0;
+    width: max-content;
+  }
+  .header_menu ul li a{
+    padding: 0;
+  }
+  .banner_content{
+    flex-direction: column;
+    .col-4{
+      width: 100%;
+    }
+    .col-7{
+      margin-left: 0;
+      margin-top: 62px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  footer{
+    .footer_menus{
+      grid-template-columns: 50% 50%;
+      grid-row-gap: 40px;
+    }
+    .item{
+      .social_link{
+        margin-left: -100%;
+      }
+    }
+  }
+  .time_list{
+    padding-bottom: calc(50% - 160px);
+  }
+  .days_list{
+    position: relative;
+
+    .day_date{
+     .time_wrapper{
+       display: none;
+     }
+    }
+    .cur_date{
+
+      .time_wrapper{
+        display: grid;
+        grid-template-columns: repeat(6 ,1fr);
+        position: absolute;
+        top: 100%;
+        //justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        left: 0;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+@media(max-width: 991px){
+  .mobile_menu{
+    width: 80%;
+  }
+  .header_menu ul li{
+    width: 100%;
+    a{
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+    }
+  }
+  main{
+    padding-top: 100px;
+  }
+  header{
+    padding: 10px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: #FFFDF5;
+    z-index: 500;
+    .row{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .col-3{
+        width: 100%;
+      }
+      .col-2{
+        width: 100%;
+      }
+      .header_phones{
+        justify-content: end;
+      }
+    }
+    .header_logo a img{
+      max-width: 250px;
+    }
+    .header_menu{
+      display: none;
+    }
+  }
+  .days_list .cur_date .time_wrapper{
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .header_logo{
+    width: 25%;
+  }
+  .header_phones{
+    display: flex;
+    gap: 22px;
+    .header_phones_list{
+      font-size: 0;
+    }
+    .burger_btn{
+      display: block;
+    }
+  }
+
+  .header_phones_list .phones_list{
+    width: 560px;
+  }
+  .header_phones_list:hover .phones_list{
+    left: 0;
+  }
+  .table_time .table_time_top{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .table_time .table_time_top .trigger_btns{
+    justify-content: space-between;
+    width: 100%;
+  }
+  .days_list .day_date{
+    border: none !important;
+  }
+  .table_time .table_time_top{
+    border-bottom: 1px solid rgba(46, 46, 56, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+  }
+
+  .days_list .day_date .date{
+    padding: 7px 0;
+    margin-bottom: 0;
+    span{
+      padding: 0;
+    }
+  }
+  .days_list .cur_date{
+    background: linear-gradient(77.03deg, rgba(20, 203, 239, 0.4) -71.22%, rgba(152, 205, 16, 0.4) 150.33%), #F6F8EE;
+    border-radius: 12px;
+    border: 1px solid rgba(152, 205, 16, 1) !important;
+  }
+  footer .item .social_link{
+    margin-left: -61%;
+    width: max-content;
+  }
+  footer .footer_menus .item:nth-child(2n){
+    padding-left: 16px;
+  }
+}
+
+
+@media(max-width: 767px){
+  .days_list .cur_date .time_wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .time_list{
+    padding-bottom: 50%;
+  }
+  footer .item .social_link{
+    margin-left: -112%;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .time_list{
+    padding-bottom: 60%;
+  }
+}
+
+
+@media(max-width: 424px){
+  .days_list .day_date .date{
+    font-size: 14px;
+  }
+  .inner_select_time .banner_serve .banner_img img{
+    width: 210px;
+    height: 213px;
+  }
+  .inner_select_time .banner_serve .banner_img:before,
+  .inner_select_time .banner_serve .banner_img:after
+
+  {
+    width: 210px;
+    height: 213px;
+  }
+  .days_list .day_date .time_item span{
+    padding: 12px 30px;
+  }
+  .days_list .cur_date .time_wrapper{
+    gap: 12px;
+  }
+  .days_list .day_date .time_item{
+    margin-bottom: 0;
+    width: max-content;
+  }
+  .days_list .day_date{
+    max-width: 40px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+  }
+}

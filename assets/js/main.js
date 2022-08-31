@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+    //Адаптив
+
+    const headerMenu = document.querySelector('.header_menu')
+    let cloneHeaderMenu = headerMenu.cloneNode(true)
+    let mobileMenu = document.createElement('div')
+    let mobileMenuContainer = document.createElement('div')
+    mobileMenuContainer.classList.add('container')
+
+    mobileMenu.classList.add('mobile_menu')
+    mobileMenuContainer.appendChild(cloneHeaderMenu)
+    mobileMenu.appendChild(mobileMenuContainer)
+    document.body.appendChild(mobileMenu)
+
+    const burgerBtn = document.querySelector('.burger_btn')
+    burgerBtn.addEventListener('click', (e)=>{
+        burgerBtn.classList.toggle('active_menu')
+
+        if(burgerBtn.classList.contains('active_menu')){
+            mobileMenu.style.left = '0'
+            document.body.style.overflow = 'hidden'
+        }else{
+            mobileMenu.style.cssText = `left: -400%;
+            transition: 0.3s all;
+            transition-duration: 0.5s;`
+            document.body.style.overflow = ''
+        }
+    })
+
     const toggleForm = document.querySelector('#toggle_form')
     const formChild = document.querySelector('.form_child')
     const formAdult = document.querySelector('.form_adult')
@@ -45,9 +73,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const popupMess = popup.querySelector('.popup_mess')
         const resultMess = popup.querySelector('.result_mess')
         const btnNextStep = popup.querySelector('.next_step')
-
-
-
         btnNextStep.addEventListener('click', (e)=>{
             e.preventDefault()
             step++
@@ -88,6 +113,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }catch(e){
         console.error(e)
     }
+
+
+
 
 
 })

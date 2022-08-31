@@ -1,12 +1,12 @@
 $manrope: 'Manrope', sans-serif;
 $inter: 'Inter', sans-serif;
 $size_16: calc((100vw - 480px) / (1320 - 480) * (16 - 16) + 16px);
-$size_18: calc((100vw - 480px) / (1320 - 480) * (18 - 18) + 18px);
+$size_18: calc((100vw - 360px) / (1920 - 360) * (18 - 14) + 14px);
 $size_60: calc((100vw - 480px) / (1320 - 480) * (60 - 60) + 60px);
 $size_40: calc((100vw - 480px) / (1320 - 480) * (40 - 40) + 40px);
-$size_44: calc((100vw - 480px) / (1320 - 480) * (44 - 44) + 44px);
+$size_44: calc((100vw - 360px) / (1920 - 360) * (44 - 24) + 23px);
 $size_24: calc((100vw - 480px) / (1320 - 480) * (24 - 24) + 24px);
-$size_20: calc((100vw - 480px) / (1320 - 480) * (20 - 20) + 20px);
+$size_20: calc((100vw - 360px) / (1920 - 360) * (20 - 14) + 14px);
 
 
 section {

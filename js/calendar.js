@@ -64,5 +64,28 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   }
+
+  function selectDay() {
+    var dayDays = document.querySelectorAll('.day_date');
+    dayDays.forEach(function (item) {
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = e.target;
+
+        if (target.classList.contains('date')) {
+          clearClass(dayDays, 'cur_date');
+          target.parentNode.classList.add('cur_date');
+        }
+      });
+    });
+  }
+
+  selectDay();
+
+  function clearClass(elements, activeClass) {
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.remove(activeClass);
+    }
+  }
 });
 //# sourceMappingURL=calendar.js.map

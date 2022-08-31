@@ -1,6 +1,28 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
+  //Адаптив
+  var headerMenu = document.querySelector('.header_menu');
+  var cloneHeaderMenu = headerMenu.cloneNode(true);
+  var mobileMenu = document.createElement('div');
+  var mobileMenuContainer = document.createElement('div');
+  mobileMenuContainer.classList.add('container');
+  mobileMenu.classList.add('mobile_menu');
+  mobileMenuContainer.appendChild(cloneHeaderMenu);
+  mobileMenu.appendChild(mobileMenuContainer);
+  document.body.appendChild(mobileMenu);
+  var burgerBtn = document.querySelector('.burger_btn');
+  burgerBtn.addEventListener('click', function (e) {
+    burgerBtn.classList.toggle('active_menu');
+
+    if (burgerBtn.classList.contains('active_menu')) {
+      mobileMenu.style.left = '0';
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu.style.cssText = "left: -400%;\n            transition: 0.3s all;\n            transition-duration: 0.5s;";
+      document.body.style.overflow = '';
+    }
+  });
   var toggleForm = document.querySelector('#toggle_form');
   var formChild = document.querySelector('.form_child');
   var formAdult = document.querySelector('.form_adult');

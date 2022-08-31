@@ -57,4 +57,25 @@ document.addEventListener('DOMContentLoaded',()=>{
             }
         }
     }
+
+
+    function selectDay(){
+        const dayDays = document.querySelectorAll('.day_date')
+        dayDays.forEach(item=>{
+            item.addEventListener('click', (e)=>{
+                e.preventDefault();
+                let target = e.target
+                if(target.classList.contains('date')){
+                    clearClass(dayDays, 'cur_date')
+                    target.parentNode.classList.add('cur_date')
+                }
+            })
+        })
+    }
+    selectDay()
+    function clearClass(elements, activeClass){
+      for(let i = 0;  i < elements.length; i++){
+          elements[i].classList.remove(activeClass)
+      }
+    }
 });

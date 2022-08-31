@@ -62,7 +62,14 @@ header {
     }
   }
 }
-
+.header_phones{
+  .burger_btn{
+    display: none;
+    width: 34px;
+    height: 34px;
+    background: url("../assets/imgs/optimize_imgs/icons/burger_icon_dis.svg") center/cover no-repeat;
+  }
+}
 .header_phones_list {
   font-family: $manrope;
   font-style: normal;
@@ -591,6 +598,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    padding: 0;
 
     li {
       list-style: none;
@@ -1759,12 +1767,15 @@ footer {
   grid-template-columns: repeat(7, 1fr);
   align-items: stretch;
   .day_date{
+    border-right: 1px solid transparent;
     border-left: 1px solid rgba(46, 46, 56, 0.1);
     border-top: 1px solid rgba(46, 46, 56, 0.1);
     border-bottom: 1px solid rgba(46, 46, 56, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.3s all;
+
     &:last-child{
       border-right: 1px solid rgba(46, 46, 56, 0.1);
     }
@@ -1823,6 +1834,7 @@ footer {
   background: linear-gradient(77.03deg, rgba(20, 203, 239, 0.4) -71.22%, rgba(152, 205, 16, 0.4) 150.33%), #F6F8EE;
   //border-radius: 12px;
   padding: 0px 20px;
+  transition: 0.3s all;
   border: 1px solid rgba(152, 205, 16, 1);
 }
 #calendar{
@@ -1835,4 +1847,31 @@ footer {
     transform: translate(0%, -50%);
   }
 }
+
+.mobile_menu{
+  position: fixed;
+  top: 71px;
+  left: -400%;
+  width: 50%;
+  background: #FAFAFA;
+  height: 100%;
+  bottom: 0;
+  z-index: 500;
+  //padding-top: 20px;
+  transition: 0.3s all;
+  transition-duration: 0.5s;
+  .header_menu{
+    ul{
+      flex-direction: column;
+      align-items: flex-start;
+      li{
+        a{
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+
+
 @import "media";
