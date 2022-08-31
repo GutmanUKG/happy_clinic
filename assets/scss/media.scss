@@ -97,7 +97,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    background: #FFFDF5;
+    background: #fff;
     z-index: 500;
     .row{
       display: grid;
@@ -130,17 +130,41 @@
     gap: 22px;
     .header_phones_list{
       font-size: 0;
+
     }
     .burger_btn{
       display: block;
+      &.active_menu{
+        background: url('../assets/imgs/optimize_imgs/icons/burger_close.svg')center/cover no-repeat;
+      }
     }
   }
 
-  .header_phones_list .phones_list{
-    width: 560px;
+
+
+  .header_phones_list{
+    background: #F7F7F7;
+    border-radius: 21.25px;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    .phones_list{
+      width: calc(560% + 40px);
+
+      //
+    }
   }
   .header_phones_list:hover .phones_list{
     left: 0;
+    transform: translateX(calc(-35% - 20px));
+    padding: 20px 20px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 32px -8px rgba(31, 109, 68, 0.1);
+    border-radius: 12px;
+    width: 200px;
+    top: calc(100% + 20px);
   }
   .table_time .table_time_top{
     flex-direction: column;

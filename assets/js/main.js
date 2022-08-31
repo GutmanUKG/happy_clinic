@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     //Адаптив
-
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlay')
+    document.body.appendChild(overlay)
     const headerMenu = document.querySelector('.header_menu')
     let cloneHeaderMenu = headerMenu.cloneNode(true)
     let mobileMenu = document.createElement('div')
@@ -19,13 +21,41 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(burgerBtn.classList.contains('active_menu')){
             mobileMenu.style.left = '0'
             document.body.style.overflow = 'hidden'
+            overlay.style.display = 'block'
         }else{
             mobileMenu.style.cssText = `left: -400%;
             transition: 0.3s all;
             transition-duration: 0.5s;`
             document.body.style.overflow = ''
+            overlay.style.display = ''
         }
     })
+
+    let liList  = mobileMenu.querySelectorAll('li')
+    liList.forEach(item =>{
+        if(item.children.length > 1){
+            item.classList.add('toggle_sub_menu')
+            item.addEventListener('click', (e)=>{
+                e.preventDefault()
+                e.stopPropagation()
+                item.classList.toggle('show_submenu')
+
+            })
+            let subLi = item.querySelectorAll('li')
+            subLi.forEach(i=>{
+                if(i.children.length > 1){
+                    i.classList.add('toggle_sub_menu')
+                    i.addEventListener('click', (e)=>{
+                        e.preventDefault()
+                        e.stopPropagation()
+                        i.classList.toggle('show_submenu_2')
+
+                    })
+                }
+            })
+        }
+    })
+
 
     const toggleForm = document.querySelector('#toggle_form')
     const formChild = document.querySelector('.form_child')

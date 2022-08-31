@@ -2,6 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   //Адаптив
+  var overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+  document.body.appendChild(overlay);
   var headerMenu = document.querySelector('.header_menu');
   var cloneHeaderMenu = headerMenu.cloneNode(true);
   var mobileMenu = document.createElement('div');
@@ -18,9 +21,33 @@ document.addEventListener('DOMContentLoaded', function () {
     if (burgerBtn.classList.contains('active_menu')) {
       mobileMenu.style.left = '0';
       document.body.style.overflow = 'hidden';
+      overlay.style.display = 'block';
     } else {
       mobileMenu.style.cssText = "left: -400%;\n            transition: 0.3s all;\n            transition-duration: 0.5s;";
       document.body.style.overflow = '';
+      overlay.style.display = '';
+    }
+  });
+  var liList = mobileMenu.querySelectorAll('li');
+  liList.forEach(function (item) {
+    if (item.children.length > 1) {
+      item.classList.add('toggle_sub_menu');
+      item.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        item.classList.toggle('show_submenu');
+      });
+      var subLi = item.querySelectorAll('li');
+      subLi.forEach(function (i) {
+        if (i.children.length > 1) {
+          i.classList.add('toggle_sub_menu');
+          i.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            i.classList.toggle('show_submenu_2');
+          });
+        }
+      });
     }
   });
   var toggleForm = document.querySelector('#toggle_form');
