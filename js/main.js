@@ -1,7 +1,130 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
 document.addEventListener('DOMContentLoaded', function () {
-  //Адаптив
+  var owlItem = /*#__PURE__*/function () {
+    function owlItem() {
+      var element = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      _classCallCheck(this, owlItem);
+
+      this.element = document.querySelector(element);
+      this.options = options;
+    }
+
+    _createClass(owlItem, [{
+      key: "init",
+      value: function init() {
+        this.element.classList.add('owl-carousel');
+        this.element.classList.add('owl-theme');
+        $(this.element).owlCarousel(_objectSpread({}, this.options));
+      }
+    }]);
+
+    return owlItem;
+  }();
+
+  var sliceText = /*#__PURE__*/function () {
+    function sliceText() {
+      var elementWrapper = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var size = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 250;
+
+      _classCallCheck(this, sliceText);
+
+      this.elementWrapper = document.querySelector(elementWrapper);
+      this.text = this.elementWrapper.querySelectorAll(text);
+      this.size = size;
+    }
+
+    _createClass(sliceText, [{
+      key: "slice",
+      value: function slice() {
+        var _this = this;
+
+        this.text.forEach(function (item) {
+          if (item.textContent.length > _this.size) {
+            item.textContent = item.textContent.slice(0, _this.size) + '...';
+            console.log(item.textContent.slice(0, _this.size));
+          }
+        });
+      }
+    }]);
+
+    return sliceText;
+  }(); //Наша команда
+
+
+  var teamList = new owlItem('.team_list', {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1.5
+      },
+      768: {
+        items: 2
+      },
+      1024: {
+        items: 4
+      }
+    }
+  });
+  teamList.init();
+  var teamItem = new sliceText('.team_list', '.text', 90);
+  teamItem.slice(); //
+  //список услуг
+
+  var servicesList = new owlItem('.services_list', {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1.5
+      },
+      768: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  }); //Адаптив
+
+  if (document.body.clientWidth < 1024) {
+    servicesList.init();
+    var servicesListItemText = new sliceText('.services_list', '.descr', 90);
+    servicesListItemText.slice();
+  } else {
+    var _servicesListItemText = new sliceText('.services_list', '.descr', 150);
+
+    _servicesListItemText.slice();
+  } //
+  //Бургер подложка
+
+
   var overlay = document.createElement('div');
   overlay.classList.add('overlay');
   document.body.appendChild(overlay);
@@ -49,7 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
-  });
+  }); //
+  //Форма
+
   var toggleForm = document.querySelector('#toggle_form');
   var formChild = document.querySelector('.form_child');
   var formAdult = document.querySelector('.form_adult');

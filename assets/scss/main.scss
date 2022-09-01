@@ -259,7 +259,6 @@ header {
       gap: 53px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.15);
       padding-bottom: 40px;
-
       img {
         border-radius: 50%;
         width: 160px;
@@ -309,7 +308,7 @@ header {
       justify-content: center;
       align-items: center;
       gap: 50px;
-
+      margin-left: auto;
       .default_link {
         padding: 0;
         display: inherit;
@@ -533,7 +532,9 @@ section.team {
   gap: 16px;
   margin-bottom: 96px;
   grid-row-gap: 180px;
-
+  .owl-stage-outer{
+    padding: 90px 0 24px 0;
+  }
   .item {
     background: rgba(255, 253, 245, 0.75);
     box-shadow: 0px 8px 32px -8px rgba(31, 109, 68, 0.1);

@@ -2,13 +2,28 @@ $manrope: 'Manrope', sans-serif;
 $inter: 'Inter', sans-serif;
 $size_16: calc((100vw - 480px) / (1320 - 480) * (16 - 16) + 16px);
 $size_18: calc((100vw - 360px) / (1920 - 360) * (18 - 14) + 14px);
-$size_60: calc((100vw - 480px) / (1320 - 480) * (60 - 60) + 60px);
-$size_40: calc((100vw - 480px) / (1320 - 480) * (40 - 40) + 40px);
+$size_60: calc((100vw - 360px) / (1920 - 360) * (60 - 24) + 24px);
+$size_40: calc((100vw - 360px) / (1920 - 360) * (40 - 20) + 20px);
 $size_44: calc((100vw - 360px) / (1920 - 360) * (44 - 24) + 23px);
-$size_24: calc((100vw - 480px) / (1320 - 480) * (24 - 24) + 24px);
+$size_24: calc((100vw - 360px) / (1920 - 480) * (24 - 14) + 13px);
 $size_20: calc((100vw - 360px) / (1920 - 360) * (20 - 14) + 14px);
 
 
+.owl-dots{
+  .owl-dot{
+    span{
+      background: #DFF1D7;
+    }
+  }
+}
+
+.owl-theme .owl-dots .owl-dot span{
+  background: #DFF1D7;
+}
+.owl-theme .owl-dots .owl-dot.active span, {
+  background: linear-gradient(0deg, #98CD10, #98CD10), #DFF1D7;
+
+}
 section {
   margin-top: 130px;
 }
