@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         this.text.forEach(function (item) {
           if (item.textContent.length > _this.size) {
             item.textContent = item.textContent.slice(0, _this.size) + '...';
-            console.log(item.textContent.slice(0, _this.size));
           }
         });
       }
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dots: true,
     responsive: {
       0: {
-        items: 1
+        items: 1.3
       },
       600: {
         items: 1.5
@@ -234,7 +233,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     var toggleFormWrapper = document.querySelector('.toggle_form');
     var btnsFormsTrigger = toggleFormWrapper.querySelectorAll('.form_submit');
-    console.log(btnsFormsTrigger);
     btnsFormsTrigger.forEach(function (item) {
       item.addEventListener('click', function (e) {
         e.preventDefault();

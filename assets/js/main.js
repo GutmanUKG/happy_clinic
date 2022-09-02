@@ -21,18 +21,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
             this.elementWrapper = document.querySelector(elementWrapper)
             this.text =  this.elementWrapper.querySelectorAll(text)
             this.size = size
-
         }
         slice(){
             this.text.forEach(item=>{
-
                 if(item.textContent.length > this.size){
                     item.textContent = item.textContent.slice(0, this.size) + '...'
-                    console.log(item.textContent.slice(0, this.size))
                 }
-
             })
-
         }
     }
 
@@ -46,7 +41,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             dots: true,
             responsive:{
                 0:{
-                    items:1
+                    items:1.3
                 },
                 600:{
                     items:1.5
@@ -78,7 +73,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         dots: true,
         responsive:{
             0:{
-                items:1
+                items:1,
+
             },
             600:{
                 items:1.5,
@@ -153,7 +149,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 e.preventDefault()
                 e.stopPropagation()
                 item.classList.toggle('show_submenu')
-
             })
             let subLi = item.querySelectorAll('li')
             subLi.forEach(i=>{
@@ -163,7 +158,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         e.preventDefault()
                         e.stopPropagation()
                         i.classList.toggle('show_submenu_2')
-
                     })
                 }
             })
@@ -211,8 +205,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         })
     }
     closeElement('.btn_close', '.popup',)
-
-
     //stepsForm
     try{
         const popup = document.querySelector('.popup')
@@ -244,12 +236,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 }
             }
         })
-
-
-
         const toggleFormWrapper = document.querySelector('.toggle_form')
         const btnsFormsTrigger = toggleFormWrapper.querySelectorAll('.form_submit')
-        console.log(btnsFormsTrigger)
         btnsFormsTrigger.forEach(item=>{
             item.addEventListener('click', (e)=>{
                 e.preventDefault()

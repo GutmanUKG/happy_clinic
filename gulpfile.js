@@ -53,7 +53,7 @@ gulp.task('browser-sync', () => {
     browserSync.init({
         server: {
             baseDir: "./",
-            proxy: 'https://localhost:3000',
+            // proxy: 'https://localhost:3000',
             https: true
         }
     });
