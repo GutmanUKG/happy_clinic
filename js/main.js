@@ -63,8 +63,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }]);
 
     return sliceText;
-  }(); //Наша команда
+  }(); //adv_list_item
 
+
+  var advListItem = new owlItem('.adv_list_item', {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1.3
+      },
+      600: {
+        items: 1.5
+      },
+      768: {
+        items: 2
+      },
+      1024: {
+        items: 3
+      },
+      1200: {
+        items: 4
+      }
+    }
+  });
+  advListItem.init(); //Наша команда
 
   var teamList = new owlItem('.team_list', {
     loop: true,
@@ -98,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dots: true,
     responsive: {
       0: {
-        items: 1
+        items: 1.2
       },
       600: {
         items: 1.5

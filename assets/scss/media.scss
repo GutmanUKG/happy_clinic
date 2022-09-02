@@ -28,6 +28,41 @@
 }
 
 @media(max-width: 1199px){
+  .faq .faq_list{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .inner{
+    .banner{
+     .row{
+       flex-direction: row;
+       justify-content: space-between;
+     }
+    }
+    .col-5{
+      //order: 1;
+      //width: 100%;
+      //align-items: center !important;
+      //justify-content: center !important;
+      width: 50%;
+    }
+    .banner_img{
+      //order: 0;
+    }
+  }
+  .adv_list{
+    .adv_list_item{
+      display: block;
+      .owl-stage-outer{
+        padding: 0 0 20px 0;
+      }
+
+      .item{
+        img{
+          height: auto;
+        }
+      }
+    }
+  }
   .main_news{
     width: 100%;
   }
@@ -501,6 +536,20 @@
 
 
 @media (max-width: 425px) {
+  footer .item .adress,
+  footer .item li a,
+  footer .item a{
+    font-size: 12px;
+  }
+  section.news .section_news_list .news_list .item .text h5{
+    line-height: 22px;
+  }
+  section.news .section_news_list .news_list .item .text{
+    gap: 10px;
+  }
+  main{
+    padding-top: 60px;
+  }
   .banner{
     .default_link{
       margin: 1.5rem auto 0 auto !important;
@@ -514,7 +563,7 @@
        padding-right: 100px;
      }
       .banner_form_btn{
-        margin: 0 calc(128px - 30px - 16px) 0 50%;
+        margin: 0 auto 0 auto;
         white-space: nowrap;
       }
     }
@@ -522,9 +571,13 @@
   .banner .banner_content .col-5 .text-right,
   .banner .banner_content .col-5 .text-right:not(h1){
     margin-left: 0;
+    text-align: left;
+  }
+  .banner .banner_content .col-5 .text-right:not(h1){
+    font-size: 11px;
   }
   .banner .banner_content .col-5{
-    margin-left: 30px;
+    padding-left: 30px;
   }
   .banner_form_btn{
     padding: 15px 34px;

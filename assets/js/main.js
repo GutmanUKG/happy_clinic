@@ -31,6 +31,35 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
+    //adv_list_item
+
+    const advListItem = new owlItem(
+        '.adv_list_item',
+        {
+            loop:true,
+            margin:10,
+            nav:false,
+            dots: true,
+            responsive:{
+                0:{
+                    items:1.3
+                },
+                600:{
+                    items:1.5
+                },
+                768:{
+                    items: 2
+                },
+                1024:{
+                    items:3
+                },
+                1200:{
+                    items:4
+                }
+            }
+        }
+    )
+    advListItem.init()
     //Наша команда
     const teamList  = new owlItem(
         '.team_list',
@@ -73,7 +102,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         dots: true,
         responsive:{
             0:{
-                items:1,
+                items:1.2
 
             },
             600:{
