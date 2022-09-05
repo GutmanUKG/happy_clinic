@@ -95,7 +95,51 @@
 }
 
 @media (max-width: 1023px) {
+  .serve_list{
+    &>div{
+      .col-4,
+      .col-7{
+        width: 100%;
+      }
+      .col-4{
+        .section_title{
+          br{
+            display: none;
+          }
+        }
+      }
+    }
+    .serve_list_items{
+      grid-template-columns: 1fr;
+    }
+    .col-7{
+      img{
+        max-width: 104px;
+      }
+    }
+  }
+  .inner{
+    .banner{
+      .banner_content{
+        display: grid;
+        grid-template-columns: 1fr;
+        div{
+          width: 100%;
+          justify-content: center !important;
+          align-items: center !important;
+          order: 1;
+        }
+        .banner_img{
+          position: relative;
+          order: 0;
+          img{
+            width: 38%;
+          }
+        }
 
+      }
+    }
+  }
   .banner{
     h1{
       &:before{

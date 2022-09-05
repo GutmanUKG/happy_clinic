@@ -66,86 +66,94 @@ document.addEventListener('DOMContentLoaded', function () {
   }(); //adv_list_item
 
 
-  var advListItem = new owlItem('.adv_list_item', {
-    loop: true,
-    margin: 10,
-    nav: false,
-    dots: true,
-    responsive: {
-      0: {
-        items: 1.3
-      },
-      600: {
-        items: 1.5
-      },
-      768: {
-        items: 2
-      },
-      1024: {
-        items: 3
-      },
-      1200: {
-        items: 4
+  try {
+    var advListItem = new owlItem('.adv_list_item', {
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: true,
+      responsive: {
+        0: {
+          items: 1.3
+        },
+        600: {
+          items: 1.5
+        },
+        768: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        },
+        1200: {
+          items: 4
+        }
       }
-    }
-  });
-  advListItem.init(); //Наша команда
+    });
+    advListItem.init();
+  } catch (e) {} //Наша команда
 
-  var teamList = new owlItem('.team_list', {
-    loop: true,
-    margin: 10,
-    nav: false,
-    dots: true,
-    responsive: {
-      0: {
-        items: 1.3
-      },
-      600: {
-        items: 1.5
-      },
-      768: {
-        items: 2
-      },
-      1024: {
-        items: 4
+
+  try {
+    var teamList = new owlItem('.team_list', {
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: true,
+      responsive: {
+        0: {
+          items: 1.3
+        },
+        600: {
+          items: 1.5
+        },
+        768: {
+          items: 2
+        },
+        1024: {
+          items: 4
+        }
       }
-    }
-  });
-  teamList.init();
-  var teamItem = new sliceText('.team_list', '.text', 90);
-  teamItem.slice(); //
-  //список услуг
+    });
+    teamList.init();
+    var teamItem = new sliceText('.team_list', '.text', 90);
+    teamItem.slice();
+  } catch (e) {} ////список услуг
 
-  var servicesList = new owlItem('.services_list', {
-    loop: true,
-    margin: 10,
-    nav: false,
-    dots: true,
-    responsive: {
-      0: {
-        items: 1.2
-      },
-      600: {
-        items: 1.5
-      },
-      768: {
-        items: 2
-      },
-      1000: {
-        items: 3
+
+  try {
+    var servicesList = new owlItem('.services_list', {
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: true,
+      responsive: {
+        0: {
+          items: 1.2
+        },
+        600: {
+          items: 1.5
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
       }
+    });
+
+    if (document.body.clientWidth < 1024) {
+      servicesList.init();
+      var servicesListItemText = new sliceText('.services_list', '.descr', 90);
+      servicesListItemText.slice();
+    } else {
+      var _servicesListItemText = new sliceText('.services_list', '.descr', 150);
+
+      _servicesListItemText.slice();
     }
-  }); //Адаптив
-
-  if (document.body.clientWidth < 1024) {
-    servicesList.init();
-    var servicesListItemText = new sliceText('.services_list', '.descr', 90);
-    servicesListItemText.slice();
-  } else {
-    var _servicesListItemText = new sliceText('.services_list', '.descr', 150);
-
-    _servicesListItemText.slice();
-  } //
+  } catch (e) {} //Адаптив
+  //
   //Бургер подложка
 
 
@@ -205,17 +213,21 @@ document.addEventListener('DOMContentLoaded', function () {
   var step = 0; //Переменная для проверки вывода всплываши с ошибкой
 
   var isError = false;
-  toggleForm.addEventListener('click', function () {
-    toggleForm.classList.toggle('adult');
 
-    if (toggleForm.classList.contains('adult')) {
-      formAdult.style.display = 'block';
-      formChild.style.display = 'none';
-    } else {
-      formAdult.style.display = 'none';
-      formChild.style.display = 'block';
-    }
-  });
+  try {
+    toggleForm.addEventListener('click', function () {
+      toggleForm.classList.toggle('adult');
+
+      if (toggleForm.classList.contains('adult')) {
+        formAdult.style.display = 'block';
+        formChild.style.display = 'none';
+      } else {
+        formAdult.style.display = 'none';
+        formChild.style.display = 'block';
+      }
+    });
+    closeElement('.btn_close', '.popup');
+  } catch (e) {}
 
   function closeElement(btnClass, elementClass) {
     var element = document.querySelector(elementClass);
@@ -230,9 +242,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var mess = element.querySelector('.result_mess');
       mess.style.display = 'none';
     });
-  }
+  } //stepsForm
 
-  closeElement('.btn_close', '.popup'); //stepsForm
 
   try {
     var popup = document.querySelector('.popup');

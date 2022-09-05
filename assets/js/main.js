@@ -32,109 +32,124 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     //adv_list_item
+    try{
+        const advListItem = new owlItem(
+            '.adv_list_item',
+            {
+                loop:true,
+                margin:10,
+                nav:false,
+                dots: true,
+                responsive:{
+                    0:{
+                        items:1.3
+                    },
+                    600:{
+                        items:1.5
+                    },
+                    768:{
+                        items: 2
+                    },
+                    1024:{
+                        items:3
+                    },
+                    1200:{
+                        items:4
+                    }
+                }
+            }
+        )
+        advListItem.init()
+    }catch (e) {
 
-    const advListItem = new owlItem(
-        '.adv_list_item',
-        {
+    }
+    //Наша команда
+    try{
+        const teamList  = new owlItem(
+            '.team_list',
+            {
+                loop:true,
+                margin:10,
+                nav:false,
+                dots: true,
+                responsive:{
+                    0:{
+                        items:1.3
+                    },
+                    600:{
+                        items:1.5
+                    },
+                    768:{
+                        items: 2
+                    },
+                    1024:{
+                        items:4
+                    }
+                }
+            }
+        )
+        teamList.init()
+
+        const teamItem = new sliceText(
+            '.team_list',
+            '.text',
+            90)
+        teamItem.slice()
+    }catch (e) {
+
+    }
+
+
+
+
+    ////список услуг
+    try{
+        const servicesList = new owlItem('.services_list' , {
             loop:true,
             margin:10,
             nav:false,
             dots: true,
             responsive:{
                 0:{
-                    items:1.3
+                    items:1.2
+
                 },
                 600:{
-                    items:1.5
+                    items:1.5,
+
                 },
                 768:{
                     items: 2
                 },
-                1024:{
+                1000:{
                     items:3
-                },
-                1200:{
-                    items:4
                 }
             }
+        })
+        if(document.body.clientWidth < 1024){
+            servicesList.init()
+            const servicesListItemText = new sliceText(
+                '.services_list',
+                '.descr',
+                90)
+            servicesListItemText.slice()
+
+        }else{
+            const servicesListItemText = new sliceText(
+                '.services_list',
+                '.descr',
+                150)
+            servicesListItemText.slice()
         }
-    )
-    advListItem.init()
-    //Наша команда
-    const teamList  = new owlItem(
-        '.team_list',
-        {
-            loop:true,
-            margin:10,
-            nav:false,
-            dots: true,
-            responsive:{
-                0:{
-                    items:1.3
-                },
-                600:{
-                    items:1.5
-                },
-                768:{
-                  items: 2
-                },
-                1024:{
-                    items:4
-                }
-            }
-        }
-    )
-    teamList.init()
-    const teamItem = new sliceText(
-        '.team_list',
-        '.text',
-        90)
-    teamItem.slice()
+    }catch (e) {
 
-    //
+    }
 
 
-    //список услуг
-    const servicesList = new owlItem('.services_list' , {
-        loop:true,
-        margin:10,
-        nav:false,
-        dots: true,
-        responsive:{
-            0:{
-                items:1.2
-
-            },
-            600:{
-                items:1.5,
-
-            },
-            768:{
-                items: 2
-            },
-            1000:{
-                items:3
-            }
-        }
-    })
 
 
     //Адаптив
-    if(document.body.clientWidth < 1024){
-        servicesList.init()
-        const servicesListItemText = new sliceText(
-            '.services_list',
-            '.descr',
-            90)
-        servicesListItemText.slice()
 
-    }else{
-        const servicesListItemText = new sliceText(
-            '.services_list',
-            '.descr',
-            150)
-        servicesListItemText.slice()
-    }
     //
 
 
@@ -206,16 +221,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let isError = false
 
 
-    toggleForm.addEventListener('click', ()=>{
-        toggleForm.classList.toggle('adult')
-        if(toggleForm.classList.contains('adult')){
-            formAdult.style.display = 'block'
-            formChild.style.display = 'none'
-        }else{
-            formAdult.style.display = 'none'
-            formChild.style.display = 'block'
-        }
-    })
+   try{
+       toggleForm.addEventListener('click', ()=>{
+           toggleForm.classList.toggle('adult')
+           if(toggleForm.classList.contains('adult')){
+               formAdult.style.display = 'block'
+               formChild.style.display = 'none'
+           }else{
+               formAdult.style.display = 'none'
+               formChild.style.display = 'block'
+           }
+       })
+
+       closeElement('.btn_close', '.popup',)
+   }catch (e) {
+       
+   }
 
     function closeElement(btnClass, elementClass){
         const element = document.querySelector(elementClass)
@@ -233,7 +254,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         })
     }
-    closeElement('.btn_close', '.popup',)
+
     //stepsForm
     try{
         const popup = document.querySelector('.popup')
