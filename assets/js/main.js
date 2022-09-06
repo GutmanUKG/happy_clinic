@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
+  
+
     class owlItem {
         constructor(
                         element = null,
