@@ -27,7 +27,99 @@
   }
 }
 
+@media(max-width: 1280px){
+  .filter_doc{
+    height: max-content;
+    form{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      input,
+      select{
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  .team_list{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .feedback{
+
+    .form_wrapper{
+      background: #fff url("../assets/imgs/optimize_imgs/feedback_bg_2.png")center/contain no-repeat;
+      .form_group{
+        .form_btns{
+          width: 50%;
+          input,
+          label{
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+        textarea{
+          width: 50% !important;
+          max-width: 50% !important;
+        }
+      }
+      padding: 45px 36px;
+      .form_btns{
+        flex-direction: column;
+      }
+      .img_feedback{
+        display: none;
+      }
+    }
+    .form_btn{
+      margin-top: 20px !important;
+      width: 100%;
+    }
+  }
+  .banner_serve .banner_img{
+    img{
+      //max-width: 303px;
+      width: 100%;
+      height: auto;
+    }
+    &:before{
+      width: 100%;
+      height: 100%;
+    }
+    &:after{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+
 @media(max-width: 1199px){
+  .feedback .banner{
+    background: url("../assets/imgs/optimize_imgs/f_mob_banner.png") center/cover no-repeat;
+    span{
+      margin-left: 0;
+      font-size: 20px;
+    }
+    small{
+      text-align: left;
+      margin-left: 0;
+    }
+  }
+  //
+  .banner_serve{
+    .col-6{
+      width: 33.33333333%;
+    }
+  }
+
+  .subtitle{
+    width: 100%;
+  }
+  //
+
+  .price_list_items{
+    grid-template-columns: 1fr;
+  }
   .faq .faq_list{
     grid-template-columns: repeat(1, 1fr);
   }
@@ -37,14 +129,23 @@
        flex-direction: row;
        justify-content: space-between;
      }
+      .col-5{
+        //order: 1;
+        //width: 100%;
+        //align-items: center !important;
+        //justify-content: center !important;
+        width: 50%;
+      }
+      .col-7{
+        width: 50%;
+        padding-right: 0!important;
+        text-align: center!important;
+        h1{
+          text-align: center!important;
+        }
+      }
     }
-    .col-5{
-      //order: 1;
-      //width: 100%;
-      //align-items: center !important;
-      //justify-content: center !important;
-      width: 50%;
-    }
+
     .banner_img{
       //order: 0;
     }
@@ -82,14 +183,14 @@
     padding: 0;
   }
   .banner_content{
-    flex-direction: column;
+    //flex-direction: column;
     .col-4{
-      width: 100%;
+      //width: 100%;
     }
     .col-7{
-      margin-left: 0;
-      margin-top: 62px;
-      width: 100%;
+      //margin-left: 0;
+      //margin-top: 62px;
+      //width: 100%;
     }
   }
 }
@@ -274,6 +375,14 @@
 }
 
 @media(max-width: 991px){
+  .feedback .form_wrapper .section_title:after{
+    max-width: 106px;
+    transform: translateY(-50%);
+  }
+  .team_list{
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 140px;
+  }
 
   section.team{
     margin-top: 100px;
@@ -497,6 +606,116 @@
 }
 
 @media(max-width: 767px){
+  .team_list_inner{
+    margin-top: 0 !important;
+    .owl-stage-outer{
+      padding: 106px 0 0 0;
+    }
+  }
+  .feedback .banner{
+    padding: 20px;
+    height: 199px;
+    background: url("../assets/imgs/optimize_imgs/f-mob.png") center/cover no-repeat;
+    .col-6{
+      width: 100%;
+      margin-left: calc(10%);
+      h2,
+      span{
+        font-size: 20px;
+        line-height: 20px;
+      }
+      small{
+        //padding: 0;
+        font-size: 9px;
+        text-align: right;
+      }
+    }
+  }
+  .feedback .form_wrapper form{
+    .form_group{
+      flex-direction: column;
+      .form_btns{
+        width: 100%;
+      }
+      textarea{
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+    }
+    .form_btn{
+      grid-template-columns: 1fr;
+      span{
+        order: 0;
+      }
+      button{
+        order: 1;
+      }
+    }
+  }
+
+  section.team {
+    margin-top: 140px;
+  }
+  .filter_doc form{
+    grid-template-columns: 1fr;
+  }
+  .banner_img{
+    img{
+      width: calc(100% - 32px) !important;
+    }
+    &:before{
+      width: calc(100% - 32px) !important;
+    }
+    &:after{
+      width: calc(100% - 32px) !important;
+    }
+  }
+  .team_list{
+    grid-template-columns: 1fr;
+  }
+  .price_list_items{
+    margin-top: 30px;
+    .item{
+      height: max-content;
+    }
+  }
+    .banner_content{
+      flex-direction: column;
+      padding-top: 0 !important;
+      .banner_img{
+        justify-content: center;
+        .img_banner{
+          max-width: 193px;
+        }
+      }
+      .col-6{
+        width: 100%;
+      }
+      .col-5{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 64px;
+        h1{
+          br{
+            display: none;
+          }
+        }
+        .banner_form_btn{
+          margin: 0 auto;
+          display: block;
+          width: max-content;
+        }
+      }
+      h1{
+        padding: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
+  .content{
+    margin-top: 38px;
+  }
 
   .adv_list{
     .subtitle{
@@ -611,6 +830,9 @@
 }
 
 @media (max-width: 560px) {
+  .feedback .form_wrapper{
+    background: url("../assets/imgs/optimize_imgs/form_mob_bg.png") top no-repeat;
+  }
   .mobile_menu{
   top: 56px;
   }
@@ -641,10 +863,16 @@
     }
     .banner_content{
       background-position-x: 224%;
+      .banner_img{
+        .img_banner{
+          transform: translateX(-8%);
+        }
+      }
       .col-5{
         width: 100%;
       }
      .text-right{
+       margin-top: 20px;
        padding-right: 100px;
      }
       .banner_form_btn{

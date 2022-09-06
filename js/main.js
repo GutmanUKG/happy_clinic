@@ -91,11 +91,42 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     advListItem.init();
+  } catch (e) {} //список врачей
+
+
+  try {
+    var temList = new owlItem('.team_list_inner', {
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: true,
+      responsive: {
+        0: {
+          items: 1.3
+        },
+        600: {
+          items: 1.5
+        },
+        768: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        },
+        1200: {
+          items: 4
+        }
+      }
+    });
+
+    if (document.body.clientWidth < 768) {
+      temList.init();
+    }
   } catch (e) {} //Наша команда
 
 
   try {
-    var teamList = new owlItem('.team_list', {
+    var teamList = new owlItem('.team_list_main', {
       loop: true,
       margin: 10,
       nav: false,
@@ -276,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   } catch (e) {
-    console.error(e);
+    console.error("\u0421\u043A\u0440\u0438\u043F\u0442 \u043E\u0442\u0432\u0435\u0447\u0430\u044E\u0449\u0438\u0439 \u0437\u0430 \u0444\u043E\u0440\u043C\u0443 ".concat(e));
   }
 });
 //# sourceMappingURL=main.js.map

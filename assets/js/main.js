@@ -65,10 +65,45 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }catch (e) {
 
     }
+    //список врачей
+    try{
+        const temList = new owlItem(
+            '.team_list_inner',
+            {
+                loop:true,
+                margin:10,
+                nav:false,
+                dots: true,
+                responsive:{
+                    0:{
+                        items:1.3
+                    },
+                    600:{
+                        items:1.5
+                    },
+                    768:{
+                        items: 2
+                    },
+                    1024:{
+                        items:3
+                    },
+                    1200:{
+                        items:4
+                    }
+                }
+            })
+        if(document.body.clientWidth < 768){
+            temList.init()
+        }
+    }catch (e) {
+
+    }
+
+
     //Наша команда
     try{
         const teamList  = new owlItem(
-            '.team_list',
+            '.team_list_main',
             {
                 loop:true,
                 margin:10,
@@ -297,11 +332,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             })
         })
     }catch(e){
-        console.error(e)
+        console.error(`Скрипт отвечающий за форму ${e}`)
     }
-
-
-
-
 
 })

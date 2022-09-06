@@ -10,8 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+    <script src="./js/owl.carousel.min.js"></script>
     <script src="./js/main.js"></script>
     <title>Document</title>
 </head>
@@ -30,11 +34,37 @@
                         <a href="#">
                             О нас
                         </a>
+
                     </li>
                     <li>
                         <a href="#">
                             Услуги
+
                         </a>
+                        <ul class="sub_menu">
+                            <li>
+                                <a href="#">
+                                    Педиатрия
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Стоматология
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            Терапевтическая стоматология
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Хирургические услуги
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">
@@ -58,6 +88,17 @@
                     <object data="./assets/imgs/optimize_imgs/phone_icon.svg" type=""></object>
                     <!--                        <img src="./assets/imgs/optimize_imgs/phone_icon.svg" alt="">-->
                     Связаться с нами
+                    <div class="phones_list">
+                        <a href="#">
+                            8 (7232) 20 30 60
+                        </a>
+                        <a href="#">
+                            8 (707) 447 76 39
+                        </a>
+                    </div>
+                </div>
+                <div class="burger_btn">
+
                 </div>
             </div>
         </div>
@@ -68,8 +109,8 @@
         <div class="container">
             <div class="row banner_content align-items-center justify-content-between">
                 <div class="col-7 d-flex justify-content-end flex-column align-items-end " style="padding-right: 60px;">
-                        <span class="text-right">
-                           Миссия клиники
+                        <span class="text-right text-sm-center">
+                           Здоровье и улыбка детей бесценны.
                         </span>
                     <h1 class="text-right">
                         <span class="blue">
@@ -87,7 +128,7 @@
                 </div>
 
                 <div class="col-5 banner_img d-flex align-items-end justify-content-end">
-                    <img src="./assets/imgs/optimize_imgs/doc_img.png" alt="">
+                    <img src="./assets/imgs/optimize_imgs/doc_img.png" alt="" class="img_banner">
                 </div>
             </div>
         </div>
@@ -113,11 +154,13 @@
                             <option value="" selected> Специальность</option>
                             <option value=""> Стоматолог</option>
                         </select>
-                    <input type="button" value="Найти" class="btn_form_default">
-                    <label for="res" class="reset">
-                        <img src="./assets/imgs/optimize_imgs/icons/reset_icon.svg" alt="">
-                        <input type="button" value="Сбросить" id="res">
-                    </label>
+                    <div class="d-flex form_btns">
+                        <input type="button" value="Найти" class="btn_form_default">
+                        <label for="res" class="reset">
+                            <img src="./assets/imgs/optimize_imgs/icons/reset_icon.svg" alt="">
+                            <input type="button" value="Сбросить" id="res">
+                        </label>
+                    </div>
 
                 </form>
             </div>
@@ -353,12 +396,14 @@
 
               <form action="">
                  <div class="form_group">
-                     <label for="name">
-                         <input type="text" id="name" placeholder="Имя">
-                     </label>
-                     <label for="phone">
-                         <input type="text" id="phone" placeholder="Телефон">
-                     </label>
+                     <div class="form_btns">
+                         <label for="name">
+                             <input type="text" id="name" placeholder="Имя">
+                         </label>
+                         <label for="phone">
+                             <input type="text" id="phone" placeholder="Телефон">
+                         </label>
+                     </div>
                      <textarea placeholder="Кратко изложите свой вопрос">
 
                      </textarea>
