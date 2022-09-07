@@ -42,6 +42,9 @@ header {
 
         &.active {
           color: #2E2E38;
+          &:after{
+            width: 15%;
+          }
         }
 
         &:hover {
@@ -1956,6 +1959,7 @@ footer {
         }
         a{
           padding: 20px;
+
           &:after{
             display: none;
           }
